@@ -39,7 +39,7 @@ function Header() {
     <header className="mb-4">
       <nav className="navbar justify-content-between">
         <div className="col-auto order-1">
-          <a href="/manage" className="navbar-brand me-0">
+          <a href="/react/manage" className="navbar-brand me-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="146" height="24">
               <g fill="none" fillRule="evenodd">
                 <path

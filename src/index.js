@@ -6,11 +6,11 @@ import Manage from "./routes/manage/manage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/react">
     <Routes>
-      <Route path="/react" />
-      <Route path="/react/expenses" element={<Expenses />} />
-      <Route path="/react/manage" element={<Manage />} />
+      <Route path="/" />
+      <Route path="/expenses" element={<Expenses />} />
+      <Route path="/manage" element={<Manage />} />
     </Routes>
   </BrowserRouter>
 );

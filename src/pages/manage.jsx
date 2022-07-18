@@ -259,7 +259,7 @@ function Banner() {
 }
 
 function Footer() {
-  const [first, setFirst] = useState("");
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -269,10 +269,11 @@ function Footer() {
 
     input.classList.remove("is-invalid", "is-valid");
 
-    if (first === null || !first.match(mailformat)) {
+    if (email === null || !email.match(mailformat)) {
       input.classList.add("is-invalid");
     } else {
       input.classList.add("is-valid");
+      event.target.reset();
     }
   };
 
@@ -290,7 +291,7 @@ function Footer() {
                 id="form-input"
                 className="form-control"
                 placeholder="Updates in your inbox"
-                onChange={(event) => setFirst(event.target.value)}
+                onChange={(event) => setEmail(event.target.value)}
                 required
               ></input>
               <span className="valid-feedback">Subscribed to our newsletter</span>

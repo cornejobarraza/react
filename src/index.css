@@ -310,6 +310,10 @@ body {
     width: 35px;
   }
 
+  .Expenses .Tooltip {
+    font-size: 0.8em;
+  }
+
   .Manage .banner {
     height: 10rem;
   }

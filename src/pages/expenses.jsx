@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import data from "./data.json";
 
 export default function Expenses() {
-  useEffect(() => {
-    document.title = "Expenses chart";
-  }, []);
-
   return (
     <div className="Expenses">
       <div id="wrapper">
@@ -40,30 +35,56 @@ function CurrentBalance() {
 }
 
 function ExpensesChart() {
-  const [items] = useState(data);
-  const [week, setWeek] = useState(0);
+  const [items, setItems] = useState({ data: [], currentData: [], currentTotal: 0 });
 
-  const weekday = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
-  const d = new Date();
-  let day = weekday[d.getDay()];
+  useEffect(() => {
+    fetchExpenses().then((res) => {
+      const firstData = listData(res, 0);
+      const firstTotal = listTotal(res, 0);
 
-  const max = data[week].spendings.reduce((prev, current) => (prev.amount > current.amount ? prev : current));
-  const listData = data[week].spendings.map((spending, index) => (
-    <div
-      className="Bar"
-      key={index}
-      style={{
-        height: (spending.amount / max.amount) * 100 + "%",
-        backgroundColor: spending.day === day ? "hsl(186, 34%, 60%)" : "hsl(10, 79%, 65%)",
-        position: "relative",
-      }}
-    >
-      <span className="Tooltip">${spending.amount}</span>
-    </div>
-  ));
-  const listTotal = data[week].spendings
-    .map((spending) => spending.amount)
-    .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+      setItems({ data: res, currentData: firstData, currentTotal: firstTotal });
+    });
+
+    document.title = "Expenses chart";
+  }, []);
+
+  const fetchExpenses = async () => {
+    try {
+      const res = await fetch("https://cornejobarraza.github.io/res/data/expenses.json");
+      const data = await res.json();
+      return data;
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const listData = (data, week) => {
+    const weekday = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+    const d = new Date();
+    let day = weekday[d.getDay()];
+
+    const max = data[week].spendings.reduce((prev, current) => (prev.amount > current.amount ? prev : current));
+    const content = data[week].spendings.map((spending, index) => (
+      <div
+        className="Bar"
+        key={index}
+        style={{
+          height: (spending.amount / max.amount) * 100 + "%",
+          backgroundColor: spending.day === day ? "hsl(186, 34%, 60%)" : "hsl(10, 79%, 65%)",
+          position: "relative",
+        }}
+      >
+        <span className="Tooltip">${spending.amount}</span>
+      </div>
+    ));
+
+    return content;
+  };
+
+  const listTotal = (data, week) =>
+    data[week].spendings
+      .map((spending) => spending.amount)
+      .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
 
   return (
     <div className="Chart">
@@ -73,14 +94,23 @@ function ExpensesChart() {
         </h3>
         <div className="dark-brown">
           <span style={{ fontSize: "0.9rem" }}>Week </span>
-          <select id="Week-Selector" onChange={(e) => setWeek(e.currentTarget.value - 1)}>
-            {items.map((item) => (
+          <select
+            id="Week-Selector"
+            onChange={(e) => {
+              const newWeek = e.currentTarget.value - 1;
+              const newData = listData(items.data, newWeek);
+              const newTotal = listTotal(items.data, newWeek);
+
+              setItems({ ...items, currentData: newData, currentTotal: newTotal });
+            }}
+          >
+            {items.data.map((item) => (
               <option key={item.week}>{item.week}</option>
             ))}
           </select>
         </div>
       </div>
-      <div className="Bars">{listData}</div>
+      <div className="Bars">{items.currentData}</div>
       <div className="Days brown">
         <span>mon</span>
         <span>tue</span>
@@ -95,7 +125,7 @@ function ExpensesChart() {
         <div>
           <span className="brown">Total this week</span>
           <h3 className="dark-brown" style={{ margin: "0.15rem 0 0 0" }}>
-            ${listTotal}
+            ${items.currentTotal}
           </h3>
         </div>
         <div style={{ textAlign: "end" }}>

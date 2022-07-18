@@ -1,12 +1,5 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import burger from "./images/icon-hamburger.svg";
-import close from "./images/icon-close.svg";
-import intro from "./images/illustration-intro.svg";
-import avatar1 from "./images/avatar-anisha.png";
-import avatar2 from "./images/avatar-ali.png";
-import avatar3 from "./images/avatar-richard.png";
-import avatar4 from "./images/avatar-shanai.png";
 
 export default function Manage() {
   useEffect(() => {
@@ -46,6 +39,9 @@ export default function Manage() {
 }
 
 function Header() {
+  const burger = "../res/images/manage/icon-hamburger.svg";
+  const close = "../res/images/manage/icon-close.svg";
+
   const [icon, setIcon] = useState(burger);
   const changeIcon = () => {
     if (icon === burger) {
@@ -133,7 +129,11 @@ function Main() {
       <div className="row gap-5 justify-content-center">
         <div className="row gap-5 gap-sm-0 px-0">
           <div className="col-12 col-sm-6 order-sm-1">
-            <img className="img-fluid" src={intro} alt="Illustration about software"></img>
+            <img
+              className="img-fluid"
+              src="../res/images/manage/illustration-intro.svg"
+              alt="Illustration about software"
+            ></img>
           </div>
           <div className="col-12 col-sm-6 text-center text-sm-start">
             <h1>Bring everyone together to build better products.</h1>
@@ -196,33 +196,33 @@ function Main() {
         </div>
         <div className="row gap-5 gap-sm-0 px-0 justify-content-center text-center">
           <h1 className="mb-sm-5">What they've said</h1>
-          <div className="row gap-5 justify-content-center">
-            <div id="review-1" className="col-12 col-sm-10 col-lg">
-              <img src={avatar1} width="75px" alt="Customer avatar"></img>
+          <div className="row gap-5 gap-lg-0 justify-content-evenly">
+            <div id="review-1" className="col-12 col-sm-5 col-lg">
+              <img src="../res/images/manage/avatar-anisha.png" width="75px" alt="Customer avatar"></img>
               <h6 className="mt-4 mb-3">Anisha Li</h6>
               <p className="mb-0">
                 “Manage has supercharged our team's workflow. The ability to maintain visibility on larger milestones at
                 all times keeps everyone motivated.”
               </p>
             </div>
-            <div id="review-2" className="col-12 col-sm-10 col-lg">
-              <img src={avatar2} width="75px" alt="Customer avatar"></img>
+            <div id="review-2" className="col-12 col-sm-5 col-lg">
+              <img src="../res/images/manage/avatar-ali.png" width="75px" alt="Customer avatar"></img>
               <h6 className="mt-4 mb-3">Ali Bravo</h6>
               <p className="mb-0">
                 “We have been able to cancel so many other subscriptions since using Manage. There is no more
                 cross-channel confusion and everyone is much more focused.”
               </p>
             </div>
-            <div id="review-3" className="col-12 col-sm-10 col-lg">
-              <img src={avatar3} width="75px" alt="Customer avatar"></img>
+            <div id="review-3" className="col-12 col-sm-5 col-lg">
+              <img src="../res/images/manage/avatar-richard.png" width="75px" alt="Customer avatar"></img>
               <h6 className="mt-4 mb-3">Richard Watts</h6>
               <p className="mb-0">
                 “Manage allows us to provide structure and process. It keeps us organized and focused. I can't stop
                 recommending them to everyone I talk to!”
               </p>
             </div>
-            <div id="review-4" className="col-12 col-sm-10 col-lg">
-              <img src={avatar4} width="75px" alt="Customer avatar"></img>
+            <div id="review-4" className="col-12 col-sm-5 col-lg">
+              <img src="../res/images/manage/avatar-shanai.png" width="75px" alt="Customer avatar"></img>
               <h6 className="mt-4 mb-3">Shanai Gough</h6>
               <p className="mb-0">
                 “Their software allows us to track, manage and collaborate on our projects from anywhere. It keeps the

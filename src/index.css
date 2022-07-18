@@ -3,3 +3,347 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.Expenses {
+  font-family: "DM Sans", sans-serif;
+  background-color: hsl(27, 66%, 92%);
+}
+
+.Expenses #wrapper {
+  height: 100vh;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 1rem;
+  margin: auto;
+}
+
+.Expenses .current {
+  background-color: hsl(186, 34%, 60%);
+}
+
+.Expenses .dark-brown {
+  color: hsl(25, 47%, 15%);
+}
+
+.Expenses .brown {
+  color: hsl(28, 10%, 53%);
+}
+
+.Expenses .divider {
+  border: 0;
+  height: 1px;
+  margin: 2rem auto;
+  background-color: lightgray;
+}
+
+.Expenses .Current-Balance {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  background-color: hsl(10, 79%, 65%);
+}
+
+.Expenses .Balance-Amount {
+  color: hsl(33, 100%, 98%);
+  width: fit-content;
+}
+
+.Expenses .Chart {
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  background-color: hsl(33, 100%, 98%);
+}
+
+.Expenses .Graph-Header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.Expenses #Week-Selector {
+  font-size: 0.9rem;
+  box-shadow: none;
+  width: fit-content;
+  background-color: hsl(33, 100%, 98%);
+  border: 0;
+  outline: 0;
+}
+
+.Expenses .Bars {
+  height: 150px;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.Expenses .Bars > div {
+  width: 30px;
+  border-radius: 0.25rem;
+  transition: height 0.25s ease;
+}
+
+.Expenses .Bar:hover {
+  opacity: 0.75;
+}
+
+.Expenses .Bar:hover > .Tooltip {
+  opacity: 1;
+  z-index: 2;
+}
+
+.Expenses .Tooltip {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -35px;
+  color: hsl(33, 100%, 98%);
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  background-color: black;
+  transition: 0.25s;
+}
+
+.Expenses .Days {
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.Expenses .Days > span {
+  font-size: 0.95rem;
+  width: 30px;
+  text-align: center;
+}
+
+.Expenses .Data-Summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Manage {
+  color: hsl(227, 12%, 61%);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.Manage h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(228, 39%, 23%);
+}
+
+.Manage h6 {
+  font-size: 0.9rem;
+}
+
+.Manage h2,
+.Manage h3,
+.Manage h4,
+.Manage h5,
+.Manage h6 {
+  font-weight: 700;
+  color: hsl(228, 39%, 23%);
+}
+
+.Manage p {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+.Manage a.list-group-item {
+  background: transparent;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  margin: 0.25rem !important;
+  text-decoration: none !important;
+  padding: 0.5rem 0.5rem !important;
+  font-size: small !important;
+}
+
+.Manage a.list-group-item:hover {
+  color: hsl(227, 12%, 61%);
+}
+
+.Manage main .btn,
+.Manage form .btn,
+.Manage .btn-nav {
+  color: white;
+  font-size: 12px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  background-color: hsl(12, 88%, 59%);
+  border-radius: 2rem;
+  box-shadow: none !important;
+}
+
+.Manage main .btn:hover,
+.Manage form .btn:hover,
+.Manage .btn-nav:hover {
+  color: white;
+  opacity: 0.9;
+}
+
+.Manage .benefit-header {
+  position: relative;
+}
+
+.Manage .number {
+  font-weight: 500;
+  background-color: hsl(12, 88%, 59%);
+  color: white;
+  display: inline;
+  padding: 0.5rem 1.25rem;
+  margin-right: 1rem;
+  border-radius: 2rem;
+}
+
+.Manage .ribbon {
+  background-color: hsl(13, 100%, 96%);
+  position: absolute;
+  z-index: -1;
+  right: -24px;
+  width: 100%;
+  border-radius: 1rem 0 0 1rem;
+  height: 33px;
+}
+
+.Manage .banner {
+  height: 25rem;
+  background-color: hsl(12, 88%, 59%);
+  margin-top: 2rem;
+}
+
+.Manage .btn-banner {
+  color: hsl(12, 88%, 59%);
+  font-size: 12px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 700;
+  background-color: white;
+  border-radius: 2rem;
+  box-shadow: none !important;
+}
+
+.Manage .btn-banner:hover {
+  color: hsl(12, 88%, 59%);
+  opacity: 0.9;
+}
+
+.Manage footer {
+  position: relative;
+  background-color: hsl(233, 12%, 13%);
+}
+
+.Manage .form-control {
+  width: 16rem;
+  font-size: 0.75rem;
+  border-radius: 2rem;
+  padding: 0.75rem 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.Manage .invalid-feedback,
+.Manage .valid-feedback {
+  text-align: center;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 5rem;
+  right: 0;
+}
+
+.Manage .list-unstyled {
+  color: #f5f5f5;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-bottom: 0;
+  line-height: 2rem;
+}
+
+.Manage .footer-links > li > a {
+  color: white;
+  text-decoration: none;
+}
+
+.Manage .footer-links > li > a:hover {
+  color: hsl(12, 88%, 59%);
+}
+
+.Manage a.social:hover > svg > path {
+  fill: hsl(12, 88%, 59%);
+}
+
+@media screen and (min-width: 576px) {
+  .Expenses #wrapper {
+    width: 400px;
+  }
+
+  .Expenses .Current-Balance {
+    padding: 1.5rem 1.75rem;
+  }
+
+  .Expenses .Chart {
+    padding: 1.75rem;
+  }
+
+  .Expenses .Bars > div {
+    width: 35px;
+  }
+
+  .Manage .banner {
+    height: 10rem;
+  }
+
+  .Manage h1.text-light {
+    font-size: 1.5rem;
+  }
+
+  .Manage #logo-2 {
+    width: 125px;
+  }
+
+  .Manage .subscription {
+    position: relative;
+  }
+
+  .Manage .form-control {
+    width: 11.5rem;
+  }
+
+  .Manage .invalid-feedback,
+  .Manage .valid-feedback {
+    text-align: end;
+    top: 3.5rem;
+    right: 0.75rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Manage .form-control {
+    width: 16rem;
+  }
+
+  .Manage a.list-group-item {
+    padding: 0.5rem 0.75rem !important;
+  }
+}

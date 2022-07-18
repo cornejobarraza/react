@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
-import Expenses from "./routes/expenses/expenses";
-import Manage from "./routes/manage/manage";
+import Expenses from "./pages/expenses/expenses";
+import Manage from "./pages/manage/manage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

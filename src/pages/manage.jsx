@@ -127,7 +127,7 @@ function Main() {
   return (
     <main>
       <div className="row gap-5 justify-content-center">
-        <div className="row gap-5 gap-sm-0 px-0">
+        <div className="row gap-5 gap-sm-0 px-0 justify-content-center">
           <div className="col-12 col-sm-6 order-sm-1">
             <img
               className="img-fluid"
@@ -144,7 +144,7 @@ function Main() {
             <button className="btn mt-3">Get Started</button>
           </div>
         </div>
-        <div className="row gap-5 gap-sm-0 px-0">
+        <div className="row gap-5 gap-sm-0 px-0 justify-content-center">
           <div className="col-12 col-sm-6 text-center text-sm-start">
             <h1>What's different about Manage?</h1>
             <p className="px-2 px-sm-0 mb-4">
@@ -194,46 +194,54 @@ function Main() {
             </div>
           </div>
         </div>
-        <div className="row gap-5 gap-sm-0 px-0 justify-content-center text-center">
-          <h1 className="mb-sm-5">What they've said</h1>
-          <div className="row gap-5 gap-lg-0 justify-content-evenly">
-            <div id="review-1" className="col-12 col-sm-5 col-lg">
-              <img src="../res/images/manage/avatar-anisha.png" width="75px" alt="Customer avatar"></img>
-              <h6 className="mt-4 mb-3">Anisha Li</h6>
-              <p className="mb-0">
-                “Manage has supercharged our team's workflow. The ability to maintain visibility on larger milestones at
-                all times keeps everyone motivated.”
-              </p>
+        <div className="testimonial text-center">
+          <div className="testimonial-header">
+            <h1>What they've said</h1>
+          </div>
+          <div className="testimonial-body">
+            <div className="review">
+              <div className="review-picture">
+                <img src="../res/images/manage/avatar-anisha.png" width="75px" alt="Customer avatar"></img>
+              </div>
+              <div className="review-body">
+                <h6 className="mt-4 mb-3">Anisha Li</h6>
+                <p className="mb-4 px-4">
+                  “Manage has supercharged our team's workflow. The ability to maintain visibility on larger milestones
+                  at all times keeps everyone motivated.”
+                </p>
+              </div>
             </div>
-            <div id="review-2" className="col-12 col-sm-5 col-lg">
-              <img src="../res/images/manage/avatar-ali.png" width="75px" alt="Customer avatar"></img>
-              <h6 className="mt-4 mb-3">Ali Bravo</h6>
-              <p className="mb-0">
-                “We have been able to cancel so many other subscriptions since using Manage. There is no more
-                cross-channel confusion and everyone is much more focused.”
-              </p>
+            <div className="review">
+              <div className="review-picture">
+                <img src="../res/images/manage/avatar-ali.png" width="75px" alt="Customer avatar"></img>
+              </div>
+              <div className="review-body">
+                <h6 className="mt-4 mb-3">Ali Bravo</h6>
+                <p className="mb-0 px-4">
+                  “We have been able to cancel so many other subscriptions since using Manage. There is no more
+                  cross-channel confusion and everyone is much more focused.”
+                </p>
+              </div>
             </div>
-            <div id="review-3" className="col-12 col-sm-5 col-lg">
+            <div className="review">
               <img src="../res/images/manage/avatar-richard.png" width="75px" alt="Customer avatar"></img>
               <h6 className="mt-4 mb-3">Richard Watts</h6>
-              <p className="mb-0">
+              <p className="mb-0 px-4">
                 “Manage allows us to provide structure and process. It keeps us organized and focused. I can't stop
                 recommending them to everyone I talk to!”
               </p>
             </div>
-            <div id="review-4" className="col-12 col-sm-5 col-lg">
+            <div className="review">
               <img src="../res/images/manage/avatar-shanai.png" width="75px" alt="Customer avatar"></img>
               <h6 className="mt-4 mb-3">Shanai Gough</h6>
-              <p className="mb-0">
+              <p className="mb-0 px-4">
                 “Their software allows us to track, manage and collaborate on our projects from anywhere. It keeps the
                 whole team in-sync without being intrusive.”
               </p>
             </div>
           </div>
-          <div>
-            <button className="btn mt-sm-5">Get Started</button>
-          </div>
         </div>
+        <button className="btn w-auto">Get Started</button>
       </div>
     </main>
   );
@@ -243,7 +251,7 @@ function Banner() {
   return (
     <div className="banner">
       <div className="row h-100 justify-content-center">
-        <div className="col-11 col-sm-5 d-flex justify-content-center justify-content-sm-start align-items-end align-items-sm-center">
+        <div className="col-10 col-sm-5 d-flex justify-content-center justify-content-sm-start align-items-end align-items-sm-center">
           <div className="text-center text-sm-start" style={{ height: "fit-content" }}>
             <h1 className="text-light mb-0">Simplify how your team works today.</h1>
           </div>

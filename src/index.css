@@ -146,6 +146,12 @@ body {
   font-family: "Be Vietnam Pro", sans-serif;
   font-size: 16px;
   font-weight: 400;
+
+  background-image: url(https://cornejobarraza.github.io/res/images/manage/bg-tablet-pattern.svg),
+    url(https://cornejobarraza.github.io/res/images/manage/bg-tablet-pattern.svg);
+  background-position: 4rem -7rem, 14rem 28rem;
+  background-size: 115%, 100%;
+  background-repeat: no-repeat;
 }
 
 .Manage h1 {
@@ -229,10 +235,31 @@ body {
   height: 33px;
 }
 
+.Manage .testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
 .Manage .banner {
+  position: relative;
+  isolation: isolate;
+  text-align: center;
   height: 25rem;
   background-color: hsl(12, 88%, 59%);
   margin-top: 2rem;
+}
+
+.Manage .banner::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-size: 125%;
+  background-image: url(https://cornejobarraza.github.io/res/images/manage/bg-tablet-pattern.svg);
+  background-position: -23rem 4rem;
+  background-repeat: no-repeat;
+  opacity: 0.075;
 }
 
 .Manage .btn-banner {
@@ -314,8 +341,46 @@ body {
     font-size: 0.8em;
   }
 
+  .Manage {
+    background-position: 25rem -10rem, -25rem 70rem;
+    background-size: 75%;
+    background-image: url(https://cornejobarraza.github.io/res/images/manage/bg-tablet-pattern.svg),
+      url(https://cornejobarraza.github.io/res/images/manage/bg-tablet-pattern.svg);
+  }
+
+  .Manage .testimonial {
+    gap: 6rem;
+  }
+
+  .Manage .testimonial-body {
+    display: grid;
+    grid-template-columns: 30rem 30rem 30rem 30rem;
+    grid-gap: 2rem;
+  }
+
+  .Manage .review {
+    width: 30rem;
+    background-color: #f5f5f5;
+  }
+
+  .Manage .review-picture {
+    height: 40px;
+    position: relative;
+  }
+
+  .Manage .review-picture img {
+    position: absolute;
+    left: 205px;
+    top: -40px;
+  }
+
   .Manage .banner {
     height: 10rem;
+  }
+
+  .Manage .banner::before {
+    background-size: 75%;
+    background-position: -2rem -3rem;
   }
 
   .Manage h1.text-light {
@@ -343,11 +408,34 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+  .Manage {
+    background-position: 35rem -5rem, -22rem 70rem;
+    background-size: 50%;
+  }
+
+  .Manage .banner::before {
+    background-size: 45%;
+    background-image: url(https://cornejobarraza.github.io/res/images/manage/bg-tablet-pattern.svg),
+      url(https://cornejobarraza.github.io/res/images/manage/bg-tablet-pattern.svg);
+    background-position: 3rem -2rem, 53rem -22rem;
+  }
+
   .Manage .form-control {
     width: 16rem;
   }
 
   .Manage a.list-group-item {
     padding: 0.5rem 0.75rem !important;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .Manage {
+    background-position: 50rem -10rem, -30rem 62rem;
+  }
+
+  .Manage .banner::before {
+    background-size: 35%;
+    background-position: 6rem -4rem, 78rem -25rem;
   }
 }
